@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  <link rel="icon" href="http://wildthinks.org/assets/images/favicon.png">
+
+  <title>
+    Vector Space - wildthinks
+    
+  </title>
+
+  <meta name="description" content="#### Field # --outlinebox A **field** $F$ is a set containing at least two distinct elements called $0$ and $1$, along with operations of addition and multip...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+  <link href='https://fonts.googleapis.com/css?family=Asap:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://wildthinks.org/pages/ALA1/">
+  <link rel="alternate" type="application/rss+xml" title="wildthinks" href="/feed.xml">
+
+  
+  <link rel=stylesheet href="https://unpkg.com/smartdown/dist/lib/smartdown.css">
+<link rel=stylesheet href="https://unpkg.com/smartdown/dist/lib/fonts.css">
+<script type="text/javascript" src="https://unpkg.com/smartdown/dist/lib/smartdown.js">
+</script>
+<script type="text/javascript" src="https://unpkg.com/smartdown/dist/lib/calc_handlers.js"></script>
+<script type="text/x-smartdown" id="Home">
+#### Field
+
+# --outlinebox
+A **field** $F$ is a set containing at least two distinct elements called $0$ and $1$, along  with operations of addition and multiplication satisfying these properties: 
+
+- $a + b = b + a$ and $ab = ba$ for all $a,b \in F$ (commutative)
+
+- $(a + b) + c = a + (b + c)$ and $(ab)c = a(bc)$ for all $a,b,c \in F$ (associative)
+
+- $a + 0 = a$ and $a1 = a$ for all $a \in F$ (identities)
+
+- for every $a \in F$ these is a unique $b \in F$ such that $a + b = 0$ (additive inverse)
+
+- for every $a \in F$ these is a unique $b \in F$ such that $ab = 1$(multiplicative inverse)
+
+- $a (b+c) = ab + ac$ for all $a,b,c \in F$ (distributive)
+# --outlinebox
+
+Notice that we don't say what the elements of $F$ are and we don't say what addition or multiplication are.  They could be numbers. The real numbers together with our standard notions of addition and multiplication form a field as do the complex numbers. The elements in $F$ could be other things. $F$ could be finite or infinite. We could define other operators for addition and multiplication.  What makes it a field is that it has elements **called** $0$ and $1$, and it's operators obey these properties.
+
+
+#### Vector Space
+
+# --outlinebox
+- **addition** on a set $V$ is a function with the form $V \times V \rightarrow V$. It takes a pair of elements $u, v \in V$ and maps them to the element $u + v \in V$. 
+
+- **scalar multiplication** on a set $V$ is a function of the form $F \times V \rightarrow V$ which maps an element of $s \in F$ and $v \in V$ to $sv \in V$.
+# --outlinebox
+
+We still haven't said what $F$ or $V$ are or what the specific mappings addition and scalar multiplication have on $V$.
+
+
+
+# --outlinebox
+A **vector space** is a set $V$ along with an addition on $V$ and a scalar multiplication on $V$ and field $F$ such that the following properties hold:
+
+ - $\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}$ for all $\mathbf{u},\mathbf{v} \in V$ (Commutativity)
+
+ - $(\mathbf{u} + \mathbf{v}) + \mathbf{w} = \mathbf{u} + (\mathbf{v} + \mathbf{w})$ and $c(d \mathbf{u}) = (cd)\mathbf{u}$ for all $\mathbf{u},\mathbf{v},\mathbf{w} \in V$ and all $c,d \in F$ (Associativity)
+
+ - There exists an element $\bf{0} \in V$ such that $\mathbf{u} + \mathbf{0} = \mathbf{u}$ for all $\bf{u} \in V$
+
+ - There exists element $1 \in F$ such that $1(\mathbf{u})= \mathbf{u}$ for all $\bf{u} \in V$
+
+ - for all $\mathbf{u} \in V$ there exists a $\mathbf{v} \in V$ such that $\mathbf{u} + \mathbf{v} = \mathbf{0}$ (Inverse for Addition)
+
+ - $c(\mathbf{u} + \mathbf{v}) = c\mathbf{u} + c\mathbf{v}$ and $(c + d)\mathbf{u} = c\mathbf{u} + d\mathbf{u}$ for all $\mathbf{u},\mathbf{v} \in V$ and all $c,d \in F$ (Multiplication Distributes over Addition)
+ 
+ 
+# --outlinebox
+
+So we just saw one instance of a vector space [here](/pages/LA2), but here's another one.
+
+# --aliceblue
+**Example:** Let $V=\\{0\\}$ and $F = \mathbb{R}$ with standard addition and multiplication. Check to convince yourself that this is a vector space.
+# --aliceblue
+
+A cooler example
+
+# --aliceblue
+**Example:** First some notation:
+ - if $S$ is a set and $F$ a field.  Then $F^S$ is the set of functions from $S$ to $F$.
+
+ - for $f,g \in F^S$, the *sum* $f + g \in F^S$ is the function defined by 
+ $$(f + g)(x) = f(x) + g(x)$$
+ for all $x \in S$.
+
+ - for $s \in F$ and $f \in F^S$, the product $sf \in F^S$ is the function
+ $$(sf)(x) = s f(x)$$ 
+
+So for example we let $S$ be the interval $[0,1]$ and $F = \mathbb{R}$ then $\mathbb{R}^{[0,1]}$ is the set of real valued functions on $[0,1]$.  This is a vector space.
+# --aliceblue
+
+In this example, the elements of our vector space are functions.  Even though your class will mostly assume that vectors are lists of numbers, they don't have to be.  They can be all sorts of weird things.  But the cool thing is that results you prove about vector spaces will apply to all kinds of crazy mathematical objects.  This is all so much bigger than lists of numbers.
+
+Ok, back to [vectors](/pages/LA2/##time-out-for-abstract-algebra)
+
+
+</script>
+
+  
+
+  
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+
+<nav class="noheadernavbar navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+
+  <div class="container">
+    <a class="navbar-brand" href="/">  
+      <img src="/assets/images/wildthinksLogo.svg" height="30">
+    </a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      
+      <ul class="noheadernav navbar-nav ml-auto">
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/About/">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+  <!-- Page Header -->
+
+<header id="header-wrapper" class="masthead noheader">
+</header>  
+  
+
+
+
+  <div class="container-fluid smartdown-outer-container smartdown-theme">
+    <div class="row">
+      <div class="col-xs-12 smartdown-container" id="blog-content">
+      <!-- <div class="col-lg-8 col-md-10 mx-auto smartdown-container" id="blog-content"> -->
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:goldfishandrobin@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/wildthinksLab">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/wildthinkslaboratory">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Heidi Dixon 2025</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/scripts.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  
+  <script>
+  /* global smartdown */
+  var baseURL = '';
+  var icons = {
+    'rectangle' : `/assets/images/calculus/rectangle.svg`,
+    'secant' : `/assets/images/calculus/secant.svg`,
+    'ftc1' : `/assets/images/calculus/ftc1.svg`,
+    'usamts2' : `/assets/images/calculus/usamts2.svg`,
+    'usamts1' : `/assets/images/calculus/usamts1.svg`,
+    'negaBinary' : `/assets/images/calculus/negaBinary.svg`,
+    'string' : `/assets/images/calculus/strings.svg`,
+    'derivative' : `/assets/images/calculus/derivative.svg`,
+    'chainrule' : `/assets/images/calculus/chainrule.svg`,
+    'fractal' : `/assets/images/calculus/fractal.svg`,
+    'limits'  : `/assets/images/calculus/limits.svg`,
+    'eToTheX' : `/assets/images/calculus/eToTheX.svg`,
+    'ftc2' : `/assets/images/calculus/ftc2.svg`,
+    'epsilonDelta': `/assets/images/calculus/epsilonDelta.svg`,
+    'penrose' : `/assets/images/calculus/penrose.svg`,
+    'circles' : `/assets/images/calculus/circles.svg`,
+    'GR' : `/assets/images/calculus/GR.svg`,
+    'Fib' : `/assets/images/calculus/FibDots.svg`,
+    '2Ddots' : `/assets/images/calculus/2Ddots.svg`,
+    'circCoord' : `/assets/images/calculus/circCoord.svg`,
+    'spiral1' : `/assets/images/calculus/spiral1.svg`
+  };
+
+  var multiparts = null;
+  var current = null;
+
+
+  function cardLoaded(url, cardKeySubhash, sourceText) {
+    /* eslint no-invalid-this: 0 */
+    sourceText = sourceText.trim();
+    multiparts = smartdown.partitionMultipart(sourceText);
+
+    if (url.endsWith('.md')) {
+      const newPath = url.replace(/\.md$/, '/');
+      current = newPath;
+      history.pushState(null, null, newPath);
+    }
+
+    var output = document.getElementById('blog-content');
+    smartdown.setHome(multiparts._default_, output, function() {
+      document.body.scrollTop = 0; // For Chrome, Safari and Opera
+      document.documentElement.scrollTop = 0; // For IE and Firefox
+
+      if (cardKeySubhash) {
+        const target = document.getElementById(cardKeySubhash);
+        if (target) {
+          target.scrollIntoView();
+        }
+      }
+
+      smartdown.startAutoplay(output);
+    });
+  }
+
+  function loadURL(url) {
+    var oReq = new XMLHttpRequest();
+    let cardKeySubhash = null;
+    const hashPos = url.indexOf('#');
+    if (hashPos >= 0) {
+      cardKeySubhash = url.slice(hashPos + 1);
+    }
+
+    oReq.addEventListener('load', function() {
+      cardLoaded(url, cardKeySubhash, this.responseText);
+    });
+    oReq.open('GET', url);
+    oReq.send();
+  }
+
+  function loadInline() {
+    smartdown.loadCardsFromDocumentScripts();
+    var s = smartdown.smartdownScripts[0];
+
+    cardLoaded(window.location.href, window.location.hash.slice(1), s.text);
+  }
+
+  function cardLoader(cardKey) {
+    // console.log('cardLoader', cardKey);
+    var part = multiparts[cardKey];
+    if (part) {
+      var output = document.getElementById('blog-content');
+      smartdown.setHome(part, output, function() {
+        smartdown.startAutoplay(output);
+      });
+    }
+    else {
+      var cardURL = cardKey;
+      if (cardKey.indexOf('http') === 0) {
+        cardURL = cardKey;
+      }
+      else {
+        const expanded = smartdown.expandHrefWithLinkRules(cardURL);
+        // console.log('cardloader', cardURL, expanded);
+        cardURL = expanded;
+      }
+      // else if (cardKey.indexOf('/posts') === 0) {
+      //   cardURL = `${baseURL}${cardKey}`;
+      //   console.log('cardLoader', cardKey, cardURL);
+      // }
+      loadURL(cardURL);
+    }
+  }
+
+  var calcHandlers = smartdown.defaultCalcHandlers;
+  const linkRules = [
+    {
+      prefix: '/posts/',
+      replace: baseURL + '/posts/',
+    },
+    {
+      prefix: '/pages/',
+      replace: baseURL + '/pages/',
+    },
+    {
+      prefix: '/assets/',
+      replace: baseURL + '/assets/',
+    },
+  ];
+
+
+
+  window.addEventListener(
+    'popstate',
+    function(event) {
+      const url = document.location.pathname;
+      if (url.endsWith('/')) {
+        const newPath = url.replace(/\/$/, '.md');
+        // console.log('popstatex: ', url, newPath, current, window.location.hash);
+        if (current && url !== current) {
+          loadURL(newPath);
+        }
+      }
+    },
+    false);
+  // window.addEventListener(
+  //   'hashchange',
+  //   function(event) {
+  //     console.log(
+  //       'hashchange document.location.pathname: ' + document.location.pathname,
+  //       JSON.stringify(event.state));
+  //   },
+  //   false);
+
+  smartdown.initialize(icons, `https://unpkg.com/smartdown/dist/`, loadInline, cardLoader, calcHandlers, linkRules);
+</script>
+
+  
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>
