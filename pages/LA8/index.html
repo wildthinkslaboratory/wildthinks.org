@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  <link rel="icon" href="http://wildthinks.org/assets/images/favicon.png">
+
+  <title>
+    Matrix Operations - wildthinks
+    
+  </title>
+
+  <meta name="description" content="These definitions and theorems are adapted from [Linear Algebra and its Applications](https://www.cartagena99.com/recursos/alumnos/temarios/210609113348-Line...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+  <link href='https://fonts.googleapis.com/css?family=Asap:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://wildthinks.org/pages/LA8/">
+  <link rel="alternate" type="application/rss+xml" title="wildthinks" href="/feed.xml">
+
+  
+  <link rel=stylesheet href="https://unpkg.com/smartdown/dist/lib/smartdown.css">
+<link rel=stylesheet href="https://unpkg.com/smartdown/dist/lib/fonts.css">
+<script type="text/javascript" src="https://unpkg.com/smartdown/dist/lib/smartdown.js">
+</script>
+<script type="text/javascript" src="https://unpkg.com/smartdown/dist/lib/calc_handlers.js"></script>
+<script type="text/x-smartdown" id="Home">
+These definitions and theorems are adapted from [Linear Algebra and its Applications](https://www.cartagena99.com/recursos/alumnos/temarios/210609113348-Linear%20Algebra%20and%20its%20applications.pdf) by Lay, Lay and McDonald.
+
+### 2.1 Matrix Operations
+
+Please watch the video.  It contains important ideas that I then don't need to type in as text and you don't have to read.
+
+![fullwidth](https://www.youtube.com/watch?v=XkY2DOUCWMU&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=4)
+
+Second video is nice but just the same stuff in 3 dimensions. It's short.
+
+![fullwidth](https://www.youtube.com/watch?v=rHLEWRxRGiM&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=5)
+If $A$ is an $m \times n$ matrix with $m$ rows and $n$ columns then $a_{ij}$ is the value in the $i$th row and $j$th column.  The **diagonals** are $a_{11}, a_{22},a_{33},\ldots$ also called the **main diagonal**.  If a matrix is square $n \times n$, then it is called a **diagonal matrix**. A square matrix whose values are all zero is called the **zero matrix**.
+
+We'll start by defining two operations on matrices.  
+
+First, **addition**. Both matrices have to be the exact same size.  So we have $A$ and $B$ are $m \times n$ matrices.  We have that $A + B$ is the $m \times n$ matrix $C$ where each $c_{ij} = a_{ij} + b_{ij}$.  
+
+**EXAMPLE**  
+$$
+\begin{bmatrix}
+1 & -2 \\
+0 & 3
+\end{bmatrix} + 
+\begin{bmatrix}
+-1 & -1 \\
+1 & 2
+\end{bmatrix} =
+\begin{bmatrix}
+0 & -3 \\
+1 & 5
+\end{bmatrix}
+$$
+
+Second, **multiplication by a scalar**.  If $A$ is an $m \times n$ matrix, and $r \in \mathbb{R}$, then $rA$ is the $m \times n$ matrix $C$ where each $c_{ij} = r \cdot a_{ij}$.
+**EXAMPLE**  
+$$ 5
+\begin{bmatrix}
+1 & -2 \\
+0 & 3
+\end{bmatrix}  =
+\begin{bmatrix}
+5 & -10 \\
+0 & 15
+\end{bmatrix}
+$$
+
+
+# --outlinebox
+**Theorem:** Let $A$, $B$, and $C$ be matrices of the same size and let $r,s \in \mathbb{R}$.
+ - $A + B = B + A$
+ - $(A + B) + C = A + (B + C)$
+ - $A + 0 = A$ where $0$ is the zero matrix
+ - $r(A + B) = rA + rB$
+ - $(r + s)A = rA + sA$
+ - $r(sA) = (rs)A$
+# --outlinebox
+
+
+
+# --outlinebox
+**Theorem:** If $A$ is an $m \times n$ matrix and $B$ is an $n \times p$ matrix with columns ${\bf b}_1,{\bf b}_2, \ldots , {\bf b}_p$, them the product $AB$ is the $m \times p$ matrix
+$$AB = A
+\begin{bmatrix}
+{\bf b}_1 & {\bf b}_2 & \cdots & {\bf b}_p 
+\end{bmatrix} = 
+\begin{bmatrix}
+A{\bf b}_1 & A{\bf b}_2 & \cdots & A{\bf b}_p 
+\end{bmatrix}
+$$ 
+# --outlinebox
+Each column of $AB$ is a linear combination of the columns of $A$ using the weights from the corresponding column of $B$.
+
+##### ROW - COLUMN RULE FOR COMPUTING $AB$
+If the product $AB$ is defined, then the entry in row $i$ and column $j$ of $AB$ is the sum of the products of corresponding entries from row $i$ of $A$ and column $j$ of $B$. If $(AB)_{ij}$
+
+denotes the $(i,j)$ entry in $AB$, and if $A$ is an $m \times n$ matrix,then
+$$(AB)_{ij} = a_{i1} b_{1j} + a_{i2} b_{2j} + \cdots + a_{in} b_{nj}$$
+
+# --outlinebox
+**Theorem:** Let $A$ is an $m \times n$ matrix and let $B$ and $C$ have the appropriate sizes for the following sums and products
+ - $A(BC) = (AB)C$  associative law of multiplication
+ - $A(B + C) = AB + AC$ left distributive law
+ - $(B + C)A = BA + CA$ right distributive law
+ - $r(AB) = (rA)B = A(rB)$ 
+ - $I_mA = A = AI_n$ identity for matrix multiplication
+# --outlinebox
+
+##### Questions
+- Does $AB = BA$ generally for matrices?
+- Does $AB = AC$ imply that $B=C$?
+- If $AB = 0$ does that imply that $A=0$ or $B=0$?
+
+##### Powers of Matrices
+
+$$A^k = A \cdots A \text{   with } k \;\; A \text{'s}$$
+
+##### Transpose of a Matrix
+Given an $m \times n$ matrix $A$, the **transpose** of matrix $A$ is an $n \times m$ matrix denoted $A^T$, whose columns are formed by the corresponding rows of $A$.
+
+**Example:** 
+$$ A = 
+\begin{bmatrix}
+1 & 2  \\
+3 & 4  \\
+5 & 6  
+\end{bmatrix}
+$$
+$$ A^T = 
+\begin{bmatrix}
+1 & 3 & 5 \\
+2 & 4 & 6  
+\end{bmatrix}
+$$
+
+
+# --outlinebox
+**Theorem:** Let $A$ and $B$ be matrices whose sizes are appropriate for the following sums and products
+- $(A^T)^T = A$
+- $(A + B)^T = A^T + B^T$
+- for any scalar $r$, $(rA)^T = rA^T$
+- $(AB)^T = B^T A^T$
+# --outlinebox
+
+
+[Matrix Inverses](/pages/LA9)
+[Back to Index](/pages/andre)
+</script>
+
+  
+
+  
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+
+<nav class="noheadernavbar navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+
+  <div class="container">
+    <a class="navbar-brand" href="/">  
+      <img src="/assets/images/wildthinksLogo.svg" height="30">
+    </a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      
+      <ul class="noheadernav navbar-nav ml-auto">
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/About/">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+  <!-- Page Header -->
+
+<header id="header-wrapper" class="masthead noheader">
+</header>  
+  
+
+
+
+  <div class="container-fluid smartdown-outer-container smartdown-theme">
+    <div class="row">
+      <div class="col-xs-12 smartdown-container" id="blog-content">
+      <!-- <div class="col-lg-8 col-md-10 mx-auto smartdown-container" id="blog-content"> -->
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:goldfishandrobin@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/wildthinksLab">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/wildthinkslaboratory">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Heidi Dixon 2025</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/scripts.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  
+  <script>
+  /* global smartdown */
+  var baseURL = '';
+  var icons = {
+    'rectangle' : `/assets/images/calculus/rectangle.svg`,
+    'secant' : `/assets/images/calculus/secant.svg`,
+    'ftc1' : `/assets/images/calculus/ftc1.svg`,
+    'usamts2' : `/assets/images/calculus/usamts2.svg`,
+    'usamts1' : `/assets/images/calculus/usamts1.svg`,
+    'negaBinary' : `/assets/images/calculus/negaBinary.svg`,
+    'string' : `/assets/images/calculus/strings.svg`,
+    'derivative' : `/assets/images/calculus/derivative.svg`,
+    'chainrule' : `/assets/images/calculus/chainrule.svg`,
+    'fractal' : `/assets/images/calculus/fractal.svg`,
+    'limits'  : `/assets/images/calculus/limits.svg`,
+    'eToTheX' : `/assets/images/calculus/eToTheX.svg`,
+    'ftc2' : `/assets/images/calculus/ftc2.svg`,
+    'epsilonDelta': `/assets/images/calculus/epsilonDelta.svg`,
+    'penrose' : `/assets/images/calculus/penrose.svg`,
+    'circles' : `/assets/images/calculus/circles.svg`,
+    'GR' : `/assets/images/calculus/GR.svg`,
+    'Fib' : `/assets/images/calculus/FibDots.svg`,
+    '2Ddots' : `/assets/images/calculus/2Ddots.svg`,
+    'circCoord' : `/assets/images/calculus/circCoord.svg`,
+    'spiral1' : `/assets/images/calculus/spiral1.svg`
+  };
+
+  var multiparts = null;
+  var current = null;
+
+
+  function cardLoaded(url, cardKeySubhash, sourceText) {
+    /* eslint no-invalid-this: 0 */
+    sourceText = sourceText.trim();
+    multiparts = smartdown.partitionMultipart(sourceText);
+
+    if (url.endsWith('.md')) {
+      const newPath = url.replace(/\.md$/, '/');
+      current = newPath;
+      history.pushState(null, null, newPath);
+    }
+
+    var output = document.getElementById('blog-content');
+    smartdown.setHome(multiparts._default_, output, function() {
+      document.body.scrollTop = 0; // For Chrome, Safari and Opera
+      document.documentElement.scrollTop = 0; // For IE and Firefox
+
+      if (cardKeySubhash) {
+        const target = document.getElementById(cardKeySubhash);
+        if (target) {
+          target.scrollIntoView();
+        }
+      }
+
+      smartdown.startAutoplay(output);
+    });
+  }
+
+  function loadURL(url) {
+    var oReq = new XMLHttpRequest();
+    let cardKeySubhash = null;
+    const hashPos = url.indexOf('#');
+    if (hashPos >= 0) {
+      cardKeySubhash = url.slice(hashPos + 1);
+    }
+
+    oReq.addEventListener('load', function() {
+      cardLoaded(url, cardKeySubhash, this.responseText);
+    });
+    oReq.open('GET', url);
+    oReq.send();
+  }
+
+  function loadInline() {
+    smartdown.loadCardsFromDocumentScripts();
+    var s = smartdown.smartdownScripts[0];
+
+    cardLoaded(window.location.href, window.location.hash.slice(1), s.text);
+  }
+
+  function cardLoader(cardKey) {
+    // console.log('cardLoader', cardKey);
+    var part = multiparts[cardKey];
+    if (part) {
+      var output = document.getElementById('blog-content');
+      smartdown.setHome(part, output, function() {
+        smartdown.startAutoplay(output);
+      });
+    }
+    else {
+      var cardURL = cardKey;
+      if (cardKey.indexOf('http') === 0) {
+        cardURL = cardKey;
+      }
+      else {
+        const expanded = smartdown.expandHrefWithLinkRules(cardURL);
+        // console.log('cardloader', cardURL, expanded);
+        cardURL = expanded;
+      }
+      // else if (cardKey.indexOf('/posts') === 0) {
+      //   cardURL = `${baseURL}${cardKey}`;
+      //   console.log('cardLoader', cardKey, cardURL);
+      // }
+      loadURL(cardURL);
+    }
+  }
+
+  var calcHandlers = smartdown.defaultCalcHandlers;
+  const linkRules = [
+    {
+      prefix: '/posts/',
+      replace: baseURL + '/posts/',
+    },
+    {
+      prefix: '/pages/',
+      replace: baseURL + '/pages/',
+    },
+    {
+      prefix: '/assets/',
+      replace: baseURL + '/assets/',
+    },
+  ];
+
+
+
+  window.addEventListener(
+    'popstate',
+    function(event) {
+      const url = document.location.pathname;
+      if (url.endsWith('/')) {
+        const newPath = url.replace(/\/$/, '.md');
+        // console.log('popstatex: ', url, newPath, current, window.location.hash);
+        if (current && url !== current) {
+          loadURL(newPath);
+        }
+      }
+    },
+    false);
+  // window.addEventListener(
+  //   'hashchange',
+  //   function(event) {
+  //     console.log(
+  //       'hashchange document.location.pathname: ' + document.location.pathname,
+  //       JSON.stringify(event.state));
+  //   },
+  //   false);
+
+  smartdown.initialize(icons, `https://unpkg.com/smartdown/dist/`, loadInline, cardLoader, calcHandlers, linkRules);
+</script>
+
+  
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>

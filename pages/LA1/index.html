@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  <link rel="icon" href="http://wildthinks.org/assets/images/favicon.png">
+
+  <title>
+    Systems of Linear Equations - wildthinks
+    
+  </title>
+
+  <meta name="description" content="These definitions and theorems are adapted from [Linear Algebra and its Applications](https://www.cartagena99.com/recursos/alumnos/temarios/210609113348-Line...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+  <link href='https://fonts.googleapis.com/css?family=Asap:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://wildthinks.org/pages/LA1/">
+  <link rel="alternate" type="application/rss+xml" title="wildthinks" href="/feed.xml">
+
+  
+  <link rel=stylesheet href="https://unpkg.com/smartdown/dist/lib/smartdown.css">
+<link rel=stylesheet href="https://unpkg.com/smartdown/dist/lib/fonts.css">
+<script type="text/javascript" src="https://unpkg.com/smartdown/dist/lib/smartdown.js">
+</script>
+<script type="text/javascript" src="https://unpkg.com/smartdown/dist/lib/calc_handlers.js"></script>
+<script type="text/x-smartdown" id="Home">
+These definitions and theorems are adapted from [Linear Algebra and its Applications](https://www.cartagena99.com/recursos/alumnos/temarios/210609113348-Linear%20Algebra%20and%20its%20applications.pdf) by Lay, Lay and McDonald.
+
+### Systems of Linear Equations
+
+# --outlinebox
+**Definition:** A **linear equation** in the variables $x_1,\ldots,x_n$ is an equation that can be written in the form 
+$$a_1x_1+a_2x_2+\cdots +a_nx_n =b$$
+where $b$ and the **coefficients** $a_1,\ldots,a_n$ are real or complex numbers, usually known in advance. The subscript $n$ may be any positive integer. A **system of linear equations** (or a **linear system**) is a collection of one or more linear equations involving the same variables $x_1,\ldots,x_n$. A **solution** of the system is a list ($s_1, s_2,\ldots,s_n$) of numbers that make each equation a true statement when the values $s_1, s_2,\ldots,s_n$ are substituted for $x_1,\ldots,x_n$ respectively.  The set of all possible solutions is called the **solution set** of the linear system.  Two linear systems are **equivalent** if the have the same solution set.  
+# --outlinebox
+
+**Note:** A system of linear equations has
+- no solution
+- exactly one solution
+- or infinitely many solutions
+A system is said to be **consistent** if it has one or infinitely many solutions.  It is called **inconsistent** if it has no solutions.
+
+The essential information of a linear system can be recorded compactly in a rectangular array called a **matrix**.  Given the system 
+$$ 
+\begin{align*}
+x_1  - & 2x_2  & + x_3 = 0 \\
+         & 2x_2 & - 8x_3 = 8 \\
+5x_1 &     &  - 5x_3 = 10
+\end{align*}
+$$
+Here is it's **coefficient matrix**
+$$
+\begin{bmatrix}
+1 & -2 & 1 \\
+0 & 2 & -8 \\
+5 & 0 & -5 
+\end{bmatrix}
+$$
+Here is it's **augmented matrix**
+$$
+\begin{bmatrix}
+1 & -2 & 1 & 0\\
+0 & 2 & -8 & 8\\
+5 & 0 & -5 & 10
+\end{bmatrix}
+$$
+
+### Row Reductions and Echelon Form
+The book spends a lot of time explaining an automated algorithm for solving systems of equations, but as you know it's basically common sense.  I'm going to summarize the most important parts of it and some of the jargon that goes with it so you'll know what people are talking about when you hear these terms.
+
+# --outlinebox
+**Row Operations** Given an augmented matrix, here are the obvious row operations
+- Re-order the rows
+- Multiply all entries in a row by a non-zero constant
+- Replace one row by the sum of itself plus a multiple of another row.
+# --outlinebox
+
+Two matrices are called **row equivalent** if you can transform one into the other by row operations.
+
+# --outlinebox
+**Definition:** A matrix is in **echelon form** when
+ - All nonzero rows are above any rows of all zeros.
+ - Each leading entry of a row is in a column to the right of the leading entry of the row above it.
+ - All entries in a column below a leading entry are zeros.
+
+If a matrix in echelon form satisfies the following additional conditions, then it is in **reduced echelon** form :
+ - The leading entry in each nonzero row is 1.
+ - Each leading 1 is the only nonzero entry in its column.
+# --outlinebox
+
+Here's an echelon form matrix
+$$
+\begin{bmatrix}
+1 & -2 & 1 & 0\\
+0 & 2 & -8 & 8\\
+0 & 0 & -5 & 10
+\end{bmatrix}
+$$
+and heres a reduced echelon matrix
+$$
+\begin{bmatrix}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 8\\
+0 & 0 & 1 & 10
+\end{bmatrix}
+$$
+Keep in mind that not all matrices are square ($n$ equations in $n$ unknowns).  You could have $3$ equations in $5$ unknowns. Then it helps to have the rules above.  
+
+There's a big long section in your book about the algorithm used to solve these systems. that I won't recreate here. Basically, the algorithm moves the matrix into echelon form and then proceeds to reduced echelon where you can then just read off the solution.  
+
+# --aliceblue
+**Note** that you can answer the question of whether the system has infinite, one or no solutions from echelon form, even if you don't know the exact solution.
+# --aliceblue
+
+# --outlinebox
+**Theorem:** Each matrix is row equivalent to one and only one reduced echelon matrix.
+# --outlinebox
+
+A **pivot position** in a matrix $A$ is a location in $A$ that corresponds to a leading 1 in the reduced echelon form of $A$. A pivot column is a column of $A$ that contains a pivot position.
+
+A system is **underdeterminied** if it has fewer equations than unknowns.
+
+#### Resources
+[Online Solver](https://matrix.reshish.com/gauss-jordanElimination.php)
+[Another Online Solver](https://calculator-online.net/gaussian-elimination-calculator/)
+
+#### Continue
+[1.3 Vector Equations](/pages/LA2)  
+[Back to Index](/pages/andre)
+</script>
+
+  
+
+  
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+
+<nav class="noheadernavbar navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+
+  <div class="container">
+    <a class="navbar-brand" href="/">  
+      <img src="/assets/images/wildthinksLogo.svg" height="30">
+    </a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      
+      <ul class="noheadernav navbar-nav ml-auto">
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/About/">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+  <!-- Page Header -->
+
+<header id="header-wrapper" class="masthead noheader">
+</header>  
+  
+
+
+
+  <div class="container-fluid smartdown-outer-container smartdown-theme">
+    <div class="row">
+      <div class="col-xs-12 smartdown-container" id="blog-content">
+      <!-- <div class="col-lg-8 col-md-10 mx-auto smartdown-container" id="blog-content"> -->
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:goldfishandrobin@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/wildthinksLab">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/wildthinkslaboratory">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Heidi Dixon 2025</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/scripts.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  
+  <script>
+  /* global smartdown */
+  var baseURL = '';
+  var icons = {
+    'rectangle' : `/assets/images/calculus/rectangle.svg`,
+    'secant' : `/assets/images/calculus/secant.svg`,
+    'ftc1' : `/assets/images/calculus/ftc1.svg`,
+    'usamts2' : `/assets/images/calculus/usamts2.svg`,
+    'usamts1' : `/assets/images/calculus/usamts1.svg`,
+    'negaBinary' : `/assets/images/calculus/negaBinary.svg`,
+    'string' : `/assets/images/calculus/strings.svg`,
+    'derivative' : `/assets/images/calculus/derivative.svg`,
+    'chainrule' : `/assets/images/calculus/chainrule.svg`,
+    'fractal' : `/assets/images/calculus/fractal.svg`,
+    'limits'  : `/assets/images/calculus/limits.svg`,
+    'eToTheX' : `/assets/images/calculus/eToTheX.svg`,
+    'ftc2' : `/assets/images/calculus/ftc2.svg`,
+    'epsilonDelta': `/assets/images/calculus/epsilonDelta.svg`,
+    'penrose' : `/assets/images/calculus/penrose.svg`,
+    'circles' : `/assets/images/calculus/circles.svg`,
+    'GR' : `/assets/images/calculus/GR.svg`,
+    'Fib' : `/assets/images/calculus/FibDots.svg`,
+    '2Ddots' : `/assets/images/calculus/2Ddots.svg`,
+    'circCoord' : `/assets/images/calculus/circCoord.svg`,
+    'spiral1' : `/assets/images/calculus/spiral1.svg`
+  };
+
+  var multiparts = null;
+  var current = null;
+
+
+  function cardLoaded(url, cardKeySubhash, sourceText) {
+    /* eslint no-invalid-this: 0 */
+    sourceText = sourceText.trim();
+    multiparts = smartdown.partitionMultipart(sourceText);
+
+    if (url.endsWith('.md')) {
+      const newPath = url.replace(/\.md$/, '/');
+      current = newPath;
+      history.pushState(null, null, newPath);
+    }
+
+    var output = document.getElementById('blog-content');
+    smartdown.setHome(multiparts._default_, output, function() {
+      document.body.scrollTop = 0; // For Chrome, Safari and Opera
+      document.documentElement.scrollTop = 0; // For IE and Firefox
+
+      if (cardKeySubhash) {
+        const target = document.getElementById(cardKeySubhash);
+        if (target) {
+          target.scrollIntoView();
+        }
+      }
+
+      smartdown.startAutoplay(output);
+    });
+  }
+
+  function loadURL(url) {
+    var oReq = new XMLHttpRequest();
+    let cardKeySubhash = null;
+    const hashPos = url.indexOf('#');
+    if (hashPos >= 0) {
+      cardKeySubhash = url.slice(hashPos + 1);
+    }
+
+    oReq.addEventListener('load', function() {
+      cardLoaded(url, cardKeySubhash, this.responseText);
+    });
+    oReq.open('GET', url);
+    oReq.send();
+  }
+
+  function loadInline() {
+    smartdown.loadCardsFromDocumentScripts();
+    var s = smartdown.smartdownScripts[0];
+
+    cardLoaded(window.location.href, window.location.hash.slice(1), s.text);
+  }
+
+  function cardLoader(cardKey) {
+    // console.log('cardLoader', cardKey);
+    var part = multiparts[cardKey];
+    if (part) {
+      var output = document.getElementById('blog-content');
+      smartdown.setHome(part, output, function() {
+        smartdown.startAutoplay(output);
+      });
+    }
+    else {
+      var cardURL = cardKey;
+      if (cardKey.indexOf('http') === 0) {
+        cardURL = cardKey;
+      }
+      else {
+        const expanded = smartdown.expandHrefWithLinkRules(cardURL);
+        // console.log('cardloader', cardURL, expanded);
+        cardURL = expanded;
+      }
+      // else if (cardKey.indexOf('/posts') === 0) {
+      //   cardURL = `${baseURL}${cardKey}`;
+      //   console.log('cardLoader', cardKey, cardURL);
+      // }
+      loadURL(cardURL);
+    }
+  }
+
+  var calcHandlers = smartdown.defaultCalcHandlers;
+  const linkRules = [
+    {
+      prefix: '/posts/',
+      replace: baseURL + '/posts/',
+    },
+    {
+      prefix: '/pages/',
+      replace: baseURL + '/pages/',
+    },
+    {
+      prefix: '/assets/',
+      replace: baseURL + '/assets/',
+    },
+  ];
+
+
+
+  window.addEventListener(
+    'popstate',
+    function(event) {
+      const url = document.location.pathname;
+      if (url.endsWith('/')) {
+        const newPath = url.replace(/\/$/, '.md');
+        // console.log('popstatex: ', url, newPath, current, window.location.hash);
+        if (current && url !== current) {
+          loadURL(newPath);
+        }
+      }
+    },
+    false);
+  // window.addEventListener(
+  //   'hashchange',
+  //   function(event) {
+  //     console.log(
+  //       'hashchange document.location.pathname: ' + document.location.pathname,
+  //       JSON.stringify(event.state));
+  //   },
+  //   false);
+
+  smartdown.initialize(icons, `https://unpkg.com/smartdown/dist/`, loadInline, cardLoader, calcHandlers, linkRules);
+</script>
+
+  
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>

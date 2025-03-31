@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  <link rel="icon" href="http://wildthinks.org/assets/images/favicon.png">
+
+  <title>
+    Null Spaces, Column Spaces and Linear Transformations - wildthinks
+    
+  </title>
+
+  <meta name="description" content="These definitions and theorems are adapted from [Linear Algebra and its Applications](https://www.cartagena99.com/recursos/alumnos/temarios/210609113348-Line...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+  <link href='https://fonts.googleapis.com/css?family=Asap:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://wildthinks.org/pages/LA16/">
+  <link rel="alternate" type="application/rss+xml" title="wildthinks" href="/feed.xml">
+
+  
+  <link rel=stylesheet href="https://unpkg.com/smartdown/dist/lib/smartdown.css">
+<link rel=stylesheet href="https://unpkg.com/smartdown/dist/lib/fonts.css">
+<script type="text/javascript" src="https://unpkg.com/smartdown/dist/lib/smartdown.js">
+</script>
+<script type="text/javascript" src="https://unpkg.com/smartdown/dist/lib/calc_handlers.js"></script>
+<script type="text/x-smartdown" id="Home">
+These definitions and theorems are adapted from [Linear Algebra and its Applications](https://www.cartagena99.com/recursos/alumnos/temarios/210609113348-Linear%20Algebra%20and%20its%20applications.pdf) by Lay, Lay and McDonald.
+
+
+### 4.2 Null Spaces, Column Spaces and Linear Transformations
+
+
+# --outlinebox
+**Definition** The **null space** of an $m \times n$ matrix $A$, writen as $\text{Null } A$, is the set of all solutions of the homogeneous equation $A{\bf x} = {\bf 0}$. In set notation
+$$\text{Null } A = \{ {\bf x} : {\bf x} \text{  is in } \mathbb{R}^n and  A{\bf x} = {\bf 0} \}$$
+# --outlinebox
+
+
+# --outlinebox
+**Theorem 4.2** The null space of an $m \times n$ matrix $A$ is a subspace of $\mathbb{R}^n$. 
+# --outlinebox
+
+
+# --outlinebox
+**Definition** The **column space** of an $m \times n$ matrix $A$, writen as $\text{Col } A$, is the set of all linear combinations of the columns in $A$. If 
+$$ A = 
+\begin{bmatrix}
+{\bf a}_1 & \cdots & {\bf a}_n
+\end{bmatrix}
+$$ then 
+$$\text{Col } A = \text{Span } \{ {\bf a}_1, \ldots, {\bf a}_n \}$$
+# --outlinebox
+
+
+# --outlinebox
+**Theorem 4.3** The column space of an $m \times n$ matrix $A$ is a subspace of $\mathbb{R}^m$. 
+# --outlinebox
+
+# --outlinebox
+**Definition** A **linear transformation** $T$ from a vector space $V$ into a vector space $W$ is a rule that assignes to each vector ${\bf x}$ in $V$ a unique vector $T({\bf x})$ in $W$, such that
+- $T({\bf u} + {\bf v}) = T({\bf u}) + T({\bf v})$ for all ${\bf u}$, ${\bf v}$ in $V$;
+ - $T(c{\bf u}) = cT({\bf u})$ for all scalars $c$ and all ${\bf u}$ in $V$.
+# --outlinebox
+
+The **kernel** (or **null space**) of such a $T$ is the set of all ${\bf u}$ in $V$ such that $T({\bf u}) = {\bf 0}$.  The **range** of $T$ is the set of all vectors in $W$ of the form $T({\bf x})$ for some value ${\bf x}$ in $V$. If $T$ happens to arise as a matrix transformation -- say, $T({\bf x}) = A{\bf x}$ for some matrix $A$ -- then the kernel and the range of $T$ are just the null space abd the column space of $A$.
+
+
+**Example 8** Let $V$ be the vector space of all real-valued functions $f$ defined on an interval $\[a,b\]$ with the property that they are differentiable and their derivatives are continuous functions on $\[a,b\]$.  Let $W$ be the vector space $C\[a,b\]$ of all continuous functions on $\[a,b\]$, and let $D:V \rightarrow W$ be the transformation that changes $f$ in $V$ into its derivative $f'$.  In calculus, two simple differentiation rules are 
+$$D(f+g) = D(f) + D(g)$$ and 
+$$D(cf) = cD(f)$$ for functions $f$, $g$ and constant $c$.  So $D$ is a linear transformation.  The kernal of $D$ is the set of constant functions on $\[a,b\]$ and the range of $D$ is the set $W$ of all continuous functions on $\[a,b\]$.
+
+**Example 9** The differential equation $$y'' + \omega^2 y = 0$$ where $\omega$ is a constant, is used to describe a variety of physical systems, such as the vibration of a weighted spring, the movement of a pendulum, and the voltage in an inductance-capacitance electrical circuit.  The sest of solutions is precisely the kernel of the linear transformation that maps a function $y=f(t)$ into the function $f''(t) + \omega^2f(t)$. Finding an explicit description of this vector space is a problem in differential equations.  The solution set turns out to be the space described in Exercies 19 from section 4.1.
+
+
+[4.3 Linearly Independent Sets; Bases](/pages/LA17)
+[Back to Index](/pages/andre)
+
+
+</script>
+
+  
+
+  
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+
+<nav class="noheadernavbar navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+
+  <div class="container">
+    <a class="navbar-brand" href="/">  
+      <img src="/assets/images/wildthinksLogo.svg" height="30">
+    </a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      
+      <ul class="noheadernav navbar-nav ml-auto">
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/About/">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+  <!-- Page Header -->
+
+<header id="header-wrapper" class="masthead noheader">
+</header>  
+  
+
+
+
+  <div class="container-fluid smartdown-outer-container smartdown-theme">
+    <div class="row">
+      <div class="col-xs-12 smartdown-container" id="blog-content">
+      <!-- <div class="col-lg-8 col-md-10 mx-auto smartdown-container" id="blog-content"> -->
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:goldfishandrobin@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/wildthinksLab">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/wildthinkslaboratory">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Heidi Dixon 2025</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/scripts.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  
+  <script>
+  /* global smartdown */
+  var baseURL = '';
+  var icons = {
+    'rectangle' : `/assets/images/calculus/rectangle.svg`,
+    'secant' : `/assets/images/calculus/secant.svg`,
+    'ftc1' : `/assets/images/calculus/ftc1.svg`,
+    'usamts2' : `/assets/images/calculus/usamts2.svg`,
+    'usamts1' : `/assets/images/calculus/usamts1.svg`,
+    'negaBinary' : `/assets/images/calculus/negaBinary.svg`,
+    'string' : `/assets/images/calculus/strings.svg`,
+    'derivative' : `/assets/images/calculus/derivative.svg`,
+    'chainrule' : `/assets/images/calculus/chainrule.svg`,
+    'fractal' : `/assets/images/calculus/fractal.svg`,
+    'limits'  : `/assets/images/calculus/limits.svg`,
+    'eToTheX' : `/assets/images/calculus/eToTheX.svg`,
+    'ftc2' : `/assets/images/calculus/ftc2.svg`,
+    'epsilonDelta': `/assets/images/calculus/epsilonDelta.svg`,
+    'penrose' : `/assets/images/calculus/penrose.svg`,
+    'circles' : `/assets/images/calculus/circles.svg`,
+    'GR' : `/assets/images/calculus/GR.svg`,
+    'Fib' : `/assets/images/calculus/FibDots.svg`,
+    '2Ddots' : `/assets/images/calculus/2Ddots.svg`,
+    'circCoord' : `/assets/images/calculus/circCoord.svg`,
+    'spiral1' : `/assets/images/calculus/spiral1.svg`
+  };
+
+  var multiparts = null;
+  var current = null;
+
+
+  function cardLoaded(url, cardKeySubhash, sourceText) {
+    /* eslint no-invalid-this: 0 */
+    sourceText = sourceText.trim();
+    multiparts = smartdown.partitionMultipart(sourceText);
+
+    if (url.endsWith('.md')) {
+      const newPath = url.replace(/\.md$/, '/');
+      current = newPath;
+      history.pushState(null, null, newPath);
+    }
+
+    var output = document.getElementById('blog-content');
+    smartdown.setHome(multiparts._default_, output, function() {
+      document.body.scrollTop = 0; // For Chrome, Safari and Opera
+      document.documentElement.scrollTop = 0; // For IE and Firefox
+
+      if (cardKeySubhash) {
+        const target = document.getElementById(cardKeySubhash);
+        if (target) {
+          target.scrollIntoView();
+        }
+      }
+
+      smartdown.startAutoplay(output);
+    });
+  }
+
+  function loadURL(url) {
+    var oReq = new XMLHttpRequest();
+    let cardKeySubhash = null;
+    const hashPos = url.indexOf('#');
+    if (hashPos >= 0) {
+      cardKeySubhash = url.slice(hashPos + 1);
+    }
+
+    oReq.addEventListener('load', function() {
+      cardLoaded(url, cardKeySubhash, this.responseText);
+    });
+    oReq.open('GET', url);
+    oReq.send();
+  }
+
+  function loadInline() {
+    smartdown.loadCardsFromDocumentScripts();
+    var s = smartdown.smartdownScripts[0];
+
+    cardLoaded(window.location.href, window.location.hash.slice(1), s.text);
+  }
+
+  function cardLoader(cardKey) {
+    // console.log('cardLoader', cardKey);
+    var part = multiparts[cardKey];
+    if (part) {
+      var output = document.getElementById('blog-content');
+      smartdown.setHome(part, output, function() {
+        smartdown.startAutoplay(output);
+      });
+    }
+    else {
+      var cardURL = cardKey;
+      if (cardKey.indexOf('http') === 0) {
+        cardURL = cardKey;
+      }
+      else {
+        const expanded = smartdown.expandHrefWithLinkRules(cardURL);
+        // console.log('cardloader', cardURL, expanded);
+        cardURL = expanded;
+      }
+      // else if (cardKey.indexOf('/posts') === 0) {
+      //   cardURL = `${baseURL}${cardKey}`;
+      //   console.log('cardLoader', cardKey, cardURL);
+      // }
+      loadURL(cardURL);
+    }
+  }
+
+  var calcHandlers = smartdown.defaultCalcHandlers;
+  const linkRules = [
+    {
+      prefix: '/posts/',
+      replace: baseURL + '/posts/',
+    },
+    {
+      prefix: '/pages/',
+      replace: baseURL + '/pages/',
+    },
+    {
+      prefix: '/assets/',
+      replace: baseURL + '/assets/',
+    },
+  ];
+
+
+
+  window.addEventListener(
+    'popstate',
+    function(event) {
+      const url = document.location.pathname;
+      if (url.endsWith('/')) {
+        const newPath = url.replace(/\/$/, '.md');
+        // console.log('popstatex: ', url, newPath, current, window.location.hash);
+        if (current && url !== current) {
+          loadURL(newPath);
+        }
+      }
+    },
+    false);
+  // window.addEventListener(
+  //   'hashchange',
+  //   function(event) {
+  //     console.log(
+  //       'hashchange document.location.pathname: ' + document.location.pathname,
+  //       JSON.stringify(event.state));
+  //   },
+  //   false);
+
+  smartdown.initialize(icons, `https://unpkg.com/smartdown/dist/`, loadInline, cardLoader, calcHandlers, linkRules);
+</script>
+
+  
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>

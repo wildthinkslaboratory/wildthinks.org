@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  <link rel="icon" href="http://wildthinks.org/assets/images/favicon.png">
+
+  <title>
+    Project 6 Instructions - wildthinks
+    
+  </title>
+
+  <meta name="description" content="[step 1](::step1/button,transparent) # :::: step1 Make a folder in `cs122` called `p6` for your project files. Then add the files - `lab6-grades.py` - `lab7-...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+  <link href='https://fonts.googleapis.com/css?family=Asap:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://wildthinks.org/pages/cs122-Project6/">
+  <link rel="alternate" type="application/rss+xml" title="wildthinks" href="/feed.xml">
+
+  
+  <link rel=stylesheet href="https://unpkg.com/smartdown/dist/lib/smartdown.css">
+<link rel=stylesheet href="https://unpkg.com/smartdown/dist/lib/fonts.css">
+<script type="text/javascript" src="https://unpkg.com/smartdown/dist/lib/smartdown.js">
+</script>
+<script type="text/javascript" src="https://unpkg.com/smartdown/dist/lib/calc_handlers.js"></script>
+<script type="text/x-smartdown" id="Home">
+[step 1](::step1/button,transparent)
+# :::: step1
+Make a folder in `cs122` called `p6` for your project files.  Then add the files 
+- `lab6-grades.py`
+- `lab7-word-check.py`
+- `lab7-word-stats.py`
+- `random_numbers.txt`
+- `p6_shared.py`        Pay careful attention to dash - vs. underscore _ in file names.  They matter.
+- `p6-random.py`
+# ::::
+
+
+## Lab 6 work
+
+[step 2](::step2/button,transparent)
+# :::: step2
+# --partialborder q
+Write some code that will input grades from the user and print a summary of those grades.
+# --partialborder
+
+#### Output 
+```
+Enter score: 25
+Enter score: 50
+Enter score: 75
+Enter score:
+*** Results ***
+Count:  3
+Average:  50.0
+Low score:  25
+High score:  75
+```
+
+#### Specifications
+- He says: You do not need to create your own user-defined functions for this lab.
+- Your program must repeatedly prompt the user for a score until nothing is entered (simply pressing the Return/Enter key rather than typing in a value).
+- Add guardian code to prevent division by zero in the average calculation. You can display, "No scores entered" if no scores were entered by the user.
+# ::::
+
+## Lab 7 work
+
+[step 3](::step3/button,transparent)
+# :::: step3
+You need to download [words_alpha.txt](https://github.com/dwyl/english-words/blob/master/words_alpha.txt), a textfile with a dictionary of words.  It's a big file so you need to click the download button on the right. You can also download it from the Lab 7 page in canvas. Put it in your `p6` directory.
+
+# ::::
+
+
+[step 4](::step4/button,transparent)
+# :::: step4
+In file `lab7-word-check.py`
+# --partialborder q1
+This first program will prompt the user for input (a word), exit if nothing entered, or search through the list of words in `words_alpha.txt` to determine if the word (case insensitive) is found.
+# --partialborder
+
+#### Output
+```
+Enter a search word (blank to exit): Test
+Word test found
+Enter a search word (blank to exit): aabb
+Word aabb not found
+Enter a search word (blank to exit): 
+```
+Then he gives you code to solve the problem that you can check after you've written your own.
+# ::::
+
+
+[step 5](::step5/button,transparent)
+# :::: step5
+In file `lab7-word-stats.py`
+# --partialborder q2
+Write a program that loops over the input file and creates the output below.
+# --partialborder
+
+#### Output
+```
+Count: 370099
+Longest word is dichlorodiphenyltrichloroethane (31)
+Shortest word is a (1)
+Palindromes: 232 (0.06%)
+First letter counts
+A: 25417 (6.87%)
+B: 18413 (4.98%)
+C: 32106 (8.67%)
+D: 18732 (5.06%)
+E: 14197 (3.84%)
+F: 11893 (3.21%)
+G: 10953 (2.96%)
+H: 13743 (3.71%)
+I: 13199 (3.57%)
+J: 2840 (0.77%)
+K: 3952 (1.07%)
+L: 10002 (2.7%)
+M: 19805 (5.35%)
+N: 13458 (3.64%)
+O: 12681 (3.43%)
+P: 34860 (9.42%)
+Q: 1793 (0.48%)
+R: 16783 (4.53%)
+S: 38761 (10.47%)
+T: 18818 (5.08%)
+U: 22767 (6.15%)
+V: 5329 (1.44%)
+W: 6559 (1.77%)
+X: 507 (0.14%)
+Y: 1143 (0.31%)
+Z: 1388 (0.38%)
+Other: 0 (0.0%)
+```
+- round percentages to the nearest hundredths.
+# ::::
+
+## Project 6
+
+[step 6](::step6/button,transparent)
+# :::: step6
+At the top of file `random_numbers.txt` paste the following.
+```
+# https://www.random.org/integers/?num=100&min=1&max=100&col=1&base=10&format=plain&rnd=new
+```
+
+Then go to [this page](https://www.random.org/integers/?num=100&min=1&max=100&col=1&base=10&format=plain&rnd=new) and copy all the numbers into `random_numbers.txt` below the web address.
+
+**Note:** The numbers you get are randomly generated.  Each time you click on the link will give a different set of 100 random numbers.  So the content everyone's `random_numbers.txt` will be different.
+# ::::
+
+
+[step 7](::step7/button,transparent)
+# :::: step7
+In file `p6-random.py` 
+# --partialborder q3
+Write a program that will
+- read each line of random_numbers.txt 
+- Count the number of lines that start with a # (comment lines)
+- Count the number of lines that are not comments
+- Sum the values of all non-comment lines
+- find the average of the numbers
+- print a summary
+# --partialborder
+
+#### Sample Output
+```
+Count: 100
+Comments: 1
+Total: 4796
+Average: 47.96
+```
+
+# ::::
+
+
+[step 8](::step8/button,transparent)
+# :::: step8
+
+**Padding** is something you do to a string that makes is a specific length (longer) by filling in extra spaces on the left or right with a specified character. 
+
+**Example** The string `'abc'` can be padded out on the left with the character `' '` to length 10 giving the string `'       abc'`
+
+In file `p6-shared.py` create the following functions:
+- `pad_string()`: Parameters include a string to be formatted, the size of the format space, a direction (e.g. left padded or right padded), and the padding character; direction must default to left padded, and the padding character must default to a single space; if the the length of the data to be formatted is greater than the size of the format space, simply return the original data to be formatted
+- `pad_left()`: Parameters include data to be formatted, the size of the format space, and the padding character; call `pad_string()`, passing the data, size and formatting character, and explicitly set the padding direction to left padded
+- `pad_right()`: Parameters include data to be formatted, the size of the format space, and the padding character; call pad_string(), passing the data, size and formatting character, and explicitly set the padding direction to right padded
+
+# ::::
+
+[step 9](::step9/button,transparent)
+# :::: step9
+Import your functions into `p6-random.py` by adding this line to the top of your code.
+```
+from p6_shared import pad_left, pad_right
+```
+Pad your output code. Use 10 as the padding space for both pad_left() and pad_right(), but rather than code 10 directly into each function call, create two variables, `label_spacing` and `num_spacing`, that may be easily changed to adjust the formatting.
+
+#### Output
+```
+Count:           100
+Comments:          1
+Total:          5191
+Average:       51.91
+```
+# ::::
+
+
+[step 10](::step10/button,transparent)
+# :::: step10
+Make your code read the filename of the random numbers from the user.
+```
+Enter filename (blank to exit): random_numbers.txt
+Count:           100
+Comments:          1
+Total:          5191
+Average:       51.91
+Enter filename (blank to exit):
+```
+
+# ::::
+
+[step 11](::step11/button,transparent)
+# :::: step11
+Make your code check to see if the inputed file exists by importing `os` module
+```
+import os
+```
+and calling
+```
+os.path.exists(filename)
+```
+which will return `True` or `False`
+
+#### Output
+```
+Enter filename (blank to exit): not_a_real_file.txt
+Invalid filename: not_a_real_file.txt
+Enter filename (blank to exit): 
+```
+# ::::
+
+
+
+[check code](::check/button,transparent)
+# :::: check
+His checks
+`random_numbers.txt`
+- Verify valid text file with numbers
+
+`p6_shared.py`
+- Verify using required functions: pad_string(), pad_left(), and pad_right()
+- Verify pad_left() and pad_right() call pad_string()
+
+`p6-random.py`
+- Verify os library is imported
+- Verify p6_shared.py library imported
+- Verify using input()
+- Verify using a while loop
+- Verify using pad_left() with each output line
+- Verify using pad_right() with each output line
+- Verify checking for file existence and invalid filename message possible
+- Verify using break statement(s)
+- Verify a comment count is output
+- Verify a total count is output
+- Verify an average is output
+
+Some other checks I think are important
+- close all files when done with them
+- strip all input lines
+- comment appropriately
+# ::::
+
+
+</script>
+
+  
+
+  
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+
+<nav class="noheadernavbar navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+
+  <div class="container">
+    <a class="navbar-brand" href="/">  
+      <img src="/assets/images/wildthinksLogo.svg" height="30">
+    </a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      
+      <ul class="noheadernav navbar-nav ml-auto">
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/About/">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+  <!-- Page Header -->
+
+<header id="header-wrapper" class="masthead noheader">
+</header>  
+  
+
+
+
+  <div class="container-fluid smartdown-outer-container smartdown-theme">
+    <div class="row">
+      <div class="col-xs-12 smartdown-container" id="blog-content">
+      <!-- <div class="col-lg-8 col-md-10 mx-auto smartdown-container" id="blog-content"> -->
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:goldfishandrobin@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/wildthinksLab">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/wildthinkslaboratory">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Heidi Dixon 2025</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/scripts.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  
+  <script>
+  /* global smartdown */
+  var baseURL = '';
+  var icons = {
+    'rectangle' : `/assets/images/calculus/rectangle.svg`,
+    'secant' : `/assets/images/calculus/secant.svg`,
+    'ftc1' : `/assets/images/calculus/ftc1.svg`,
+    'usamts2' : `/assets/images/calculus/usamts2.svg`,
+    'usamts1' : `/assets/images/calculus/usamts1.svg`,
+    'negaBinary' : `/assets/images/calculus/negaBinary.svg`,
+    'string' : `/assets/images/calculus/strings.svg`,
+    'derivative' : `/assets/images/calculus/derivative.svg`,
+    'chainrule' : `/assets/images/calculus/chainrule.svg`,
+    'fractal' : `/assets/images/calculus/fractal.svg`,
+    'limits'  : `/assets/images/calculus/limits.svg`,
+    'eToTheX' : `/assets/images/calculus/eToTheX.svg`,
+    'ftc2' : `/assets/images/calculus/ftc2.svg`,
+    'epsilonDelta': `/assets/images/calculus/epsilonDelta.svg`,
+    'penrose' : `/assets/images/calculus/penrose.svg`,
+    'circles' : `/assets/images/calculus/circles.svg`,
+    'GR' : `/assets/images/calculus/GR.svg`,
+    'Fib' : `/assets/images/calculus/FibDots.svg`,
+    '2Ddots' : `/assets/images/calculus/2Ddots.svg`,
+    'circCoord' : `/assets/images/calculus/circCoord.svg`,
+    'spiral1' : `/assets/images/calculus/spiral1.svg`
+  };
+
+  var multiparts = null;
+  var current = null;
+
+
+  function cardLoaded(url, cardKeySubhash, sourceText) {
+    /* eslint no-invalid-this: 0 */
+    sourceText = sourceText.trim();
+    multiparts = smartdown.partitionMultipart(sourceText);
+
+    if (url.endsWith('.md')) {
+      const newPath = url.replace(/\.md$/, '/');
+      current = newPath;
+      history.pushState(null, null, newPath);
+    }
+
+    var output = document.getElementById('blog-content');
+    smartdown.setHome(multiparts._default_, output, function() {
+      document.body.scrollTop = 0; // For Chrome, Safari and Opera
+      document.documentElement.scrollTop = 0; // For IE and Firefox
+
+      if (cardKeySubhash) {
+        const target = document.getElementById(cardKeySubhash);
+        if (target) {
+          target.scrollIntoView();
+        }
+      }
+
+      smartdown.startAutoplay(output);
+    });
+  }
+
+  function loadURL(url) {
+    var oReq = new XMLHttpRequest();
+    let cardKeySubhash = null;
+    const hashPos = url.indexOf('#');
+    if (hashPos >= 0) {
+      cardKeySubhash = url.slice(hashPos + 1);
+    }
+
+    oReq.addEventListener('load', function() {
+      cardLoaded(url, cardKeySubhash, this.responseText);
+    });
+    oReq.open('GET', url);
+    oReq.send();
+  }
+
+  function loadInline() {
+    smartdown.loadCardsFromDocumentScripts();
+    var s = smartdown.smartdownScripts[0];
+
+    cardLoaded(window.location.href, window.location.hash.slice(1), s.text);
+  }
+
+  function cardLoader(cardKey) {
+    // console.log('cardLoader', cardKey);
+    var part = multiparts[cardKey];
+    if (part) {
+      var output = document.getElementById('blog-content');
+      smartdown.setHome(part, output, function() {
+        smartdown.startAutoplay(output);
+      });
+    }
+    else {
+      var cardURL = cardKey;
+      if (cardKey.indexOf('http') === 0) {
+        cardURL = cardKey;
+      }
+      else {
+        const expanded = smartdown.expandHrefWithLinkRules(cardURL);
+        // console.log('cardloader', cardURL, expanded);
+        cardURL = expanded;
+      }
+      // else if (cardKey.indexOf('/posts') === 0) {
+      //   cardURL = `${baseURL}${cardKey}`;
+      //   console.log('cardLoader', cardKey, cardURL);
+      // }
+      loadURL(cardURL);
+    }
+  }
+
+  var calcHandlers = smartdown.defaultCalcHandlers;
+  const linkRules = [
+    {
+      prefix: '/posts/',
+      replace: baseURL + '/posts/',
+    },
+    {
+      prefix: '/pages/',
+      replace: baseURL + '/pages/',
+    },
+    {
+      prefix: '/assets/',
+      replace: baseURL + '/assets/',
+    },
+  ];
+
+
+
+  window.addEventListener(
+    'popstate',
+    function(event) {
+      const url = document.location.pathname;
+      if (url.endsWith('/')) {
+        const newPath = url.replace(/\/$/, '.md');
+        // console.log('popstatex: ', url, newPath, current, window.location.hash);
+        if (current && url !== current) {
+          loadURL(newPath);
+        }
+      }
+    },
+    false);
+  // window.addEventListener(
+  //   'hashchange',
+  //   function(event) {
+  //     console.log(
+  //       'hashchange document.location.pathname: ' + document.location.pathname,
+  //       JSON.stringify(event.state));
+  //   },
+  //   false);
+
+  smartdown.initialize(icons, `https://unpkg.com/smartdown/dist/`, loadInline, cardLoader, calcHandlers, linkRules);
+</script>
+
+  
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>
