@@ -1,0 +1,5 @@
+- [Finger Spelling Letters](https://www.lifeprint.com/asl101/fingerspelling/)
+- [Important Finger Spelling Tips](https://www.asldeafined.com/2017/12/fingerspelling-tips/)
+- [Video Recognition Finger Spelling](https://deafchildren.org/knowledge-center/asl-resources/asl-fingerspelling-app/) This requires a video camera.  You can use my laptop if you want.
+- [Finger Spelling Quizzes](https://www.lifeprint.com/asl101/fingerspelling/practicequizzes.htm)
+- [Practice Reading Finger Spelling](https://asl.ms/)
